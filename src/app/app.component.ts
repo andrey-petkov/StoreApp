@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,27 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'StoreApp';
+  items: MenuItem[] = [];
+
+  ngOnInit(){
+    this.items = [{
+      label: 'Store',
+      items: [
+        {
+          label: 'New',
+          routerLink: 'new'
+        },
+        {
+          label: 'List',
+          routerLink: 'sales'
+        }
+      ]
+    },
+    {
+      label: 'Logout',
+      routerLink: 'login'
+    }
+    ];
+  }
+
 }

@@ -1,0 +1,75 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="newProductForm">
+  <p-panel header="New product form">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Product ID:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="productId" class="form-control" name="productId">
+        </div>
+        <div class="ui-grid-col-4">
+          <div [hidden]="newProductForm.controls['productId'].valid || !newProductForm.controls['productId'].dirty" class="alert alert-danger">
+            Product ID is required
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Product Name:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="productName" class="form-control" name="productName">
+        </div>
+        <div class="ui-grid-col-4">
+          <div [hidden]="newProductForm.controls['productName'].valid || !newProductForm.controls['productName'].dirty" class="alert alert-danger">
+            Product Name is required
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Product Manager:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="productManager" class="form-control" name="productManager">
+        </div>
+        <div class="ui-grid-col-4">
+        </div>
+      </div>
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2">
+          Sales date:
+        </div>
+        <div class="ui-grid-col-6">
+          <input pInputText type="text" formControlName="salesDate" class="form-control" name="salesDate">
+        </div>
+        <div class="ui-grid-col-4">
+          <div [hidden]="newProductForm.controls['salesDate'].valid || !newProductForm.controls['salesDate'].dirty" class="alert alert-danger">
+            Sales date is required
+          </div>
+        </div>
+      </div>
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-2"></div>
+        <div class="ui-grid-col-6">&nbsp;</div>
+        <div class="ui-grid-col-4"></div>
+      </div>
+
+      <div class="ui-grid-row">
+        <div class="ui-grid-col-6">
+          <button pButton type="submit" label="Submit" [disabled]="!newProductForm.valid"></button>
+        </div>
+        <div class="ui-grid-col-6">
+          <p-button label="Reset" (onClick)="handleClick($event)"></p-button>
+        </div>
+      </div>
+
+    </div>
+  </p-panel>
+</form>
