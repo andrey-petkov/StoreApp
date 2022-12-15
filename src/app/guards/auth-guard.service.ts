@@ -16,7 +16,8 @@ export class AuthGuard implements CanActivate {
 
     const loggedInFlag = localStorage.getItem('loggedIn');
 
-    if (loggedInFlag){
+    if (loggedInFlag === 'true'){
+      console.log('AuthGuard : ' + loggedInFlag)
       return true;
     }
 

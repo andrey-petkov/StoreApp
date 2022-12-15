@@ -26,9 +26,17 @@ export class AppComponent {
     },
     {
       label: 'Logout',
-      routerLink: 'login'
+      routerLink: 'login',
+      command: (event: Event) => { this.logoutOnClick() }
     }
     ];
+  }
+
+  private logoutOnClick() {
+    console.log('logout click');
+    if ( localStorage.getItem('loggedIn') ){
+      localStorage.setItem('loggedIn', 'false');
+    }
   }
 
 }
