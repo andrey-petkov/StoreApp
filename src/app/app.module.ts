@@ -13,6 +13,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {PanelModule} from "primeng/panel";
 import {PasswordModule} from "primeng/password";
 import {ButtonModule} from 'primeng/button';
+import {HttpClientModule} from "@angular/common/http";
+import {TableModule} from "primeng/table";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {ButtonModule} from 'primeng/button';
     PanelModule,
     ButtonModule,
     FormsModule,
-    PasswordModule
+    PasswordModule,
+    HttpClientModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
